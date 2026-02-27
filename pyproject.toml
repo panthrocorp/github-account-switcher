@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gh-switcher"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "PyYAML>=6.0",
+    "Pillow>=10.0",
+    "platformdirs>=4.0",
+    "pystray>=0.19.5 ; sys_platform != 'linux'",
+]
+
+[project.scripts]
+gh-switcher = "gh_switcher.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gh_switcher"]
